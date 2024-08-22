@@ -1,0 +1,15 @@
+{
+  "name": "playwrightdemo",
+  "version": "1.0.0",
+  "description": "Quick demo for a Playwright automation framework\r  Test commit",
+  "main": "index.js",
+  "scripts": {},
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@playwright/test": "^1.46.1",
+    "@types/node": "^22.5.0",
+    "typescript": "^5.5.4"
+  }
+}
