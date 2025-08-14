@@ -1,20 +1,21 @@
-import { expect, type Locator, type Page } from '@playwright/test';
+import { type Locator, type Page } from '@playwright/test';
 
 export class CheckoutPage {
     readonly page: Page;
+    
+    // Selectors
+    readonly nameInput: Locator;
+    readonly emailInput: Locator;
+    readonly addressTextarea: Locator;
+    readonly placeOrderButton: Locator;
+    readonly checkoutButton: Locator;
 
-  constructor(page: Page) {
-    this.page = page;
-  }
-
-
-  async fillShippingDetails(name: string, email: string, address: string) {
-    await this.page.fill('input[data-qa="name"]', name);
-    await this.page.fill('input[data-qa="email"]', email);
-    await this.page.fill('textarea[data-qa="address"]', address);
-  }
-
-  async placeOrder() {
-    await this.page.click('a.btn.btn-default.check_out');
-  }
+    constructor(page: Page) {
+        this.page = page;
+        this.nameInput = page.locator('input[data-qa="name"]');
+        this.emailInput = page.locator('input[data-qa="email"]');
+        this.addressTextarea = page.locator('textarea[data-qa="address"]');
+        this.placeOrderButton = page.locator('a.btn.btn-default.check_out');
+        this.checkoutButton = page.locator('.check_out');
+    }
 }
